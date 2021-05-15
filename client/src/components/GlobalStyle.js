@@ -11,6 +11,14 @@ body{
     background: #161616;
     font-family: "Roboto", sans-serif;
 }
+a{
+    text-decoration: none;
+    color:white;
+    transition: all ease 0.5s;
+    &:hover{
+        color: #a300a3;
+    }
+}
 `;
 
 export default GlobalStyle;
