@@ -4,19 +4,18 @@ import styled from 'styled-components';
 const Login = () => {
   return (
     <div>
-      <img alt={'logo'}></img>
       <StyledH1>Login</StyledH1>
 
       <StyledLoginDiv>
 
-        <input
+        <input id='emailLogin'
           placeholder={'Email'}>
 
         </input>
 
         <br></br>
         <br></br>
-        <input placeholder={'Password'}>
+        <input id='passLogin' placeholder={'Password'}>
 
         </input>
         <br></br>
@@ -41,7 +40,7 @@ const Login = () => {
 
         </input>
         <br></br>
-        <button id={'button'}>Sign-Up</button>
+        <button id='button'>Sign-Up</button>
       </StyledSignUpDiv>
 
     </div>
@@ -57,13 +56,26 @@ const StyledH1 = styled.h1`
 const StyledLoginDiv = styled.div`
 text-align:center;
 margin-top:25px;
+#emailLogin{
+  border-radius:5px;
+  height:25px;
+  width:200px;
+};
+#passLogin{
+border-radius:5px;
+  height:25px;
+  width:200px;
+}
 #button{
+  width:50px;
+  height:25px;
+  border-radius:7px;
   margin-top:20px;
     color:purple;
     background:white;
-    transition: all ease 0.5s
-    }
-    #button::hover{
+    transition: all ease 0.5s;
+    cursor:pointer;
+    &:hover{
       color:white;
       background:purple;
 
@@ -83,16 +95,20 @@ const StyledSignUpDiv = styled.div`
 text-align:center;
 margin-top:90px;
 #button{
+  width:65px;
+  height:25px;
+  border-radius:7px;
   margin-top:25px;
     color:purple;
     background:white;
-    transition: all ease 0.5s
+    transition: all ease 0.5s;
+    cursor:pointer;
     &:hover{
       color:white;
       background:purple;
 
-    }
-  }
+    };
+  };
 `;
 
 
