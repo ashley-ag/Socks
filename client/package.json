@@ -8,6 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "chart.js": "^3.2.1",
+    "firebase": "^8.6.1",
     "framer-motion": "^4.1.16",
     "react": "^16.6.3",
     "react-chartjs-2": "^3.0.3",

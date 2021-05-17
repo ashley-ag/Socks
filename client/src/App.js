@@ -2,12 +2,14 @@ import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Markets from "./pages/Markets";
 import AddStocks from "./pages/AddStocks";
-import Login from "./pages/Login";
+// import Login from "./pages/Login";
 import StockDetail from "./pages/StockDetail";
 import Nav from "./components/Nav";
 import GlobalStyle from "./components/GlobalStyle";
 import { Switch, Route } from "react-router-dom";
 import fire from './firebase';
+import Login from './components/Login';
+import Hero from './components/Hero';
 
 function App() {
   const [user, setUser] = useState('');
@@ -98,12 +100,32 @@ function App() {
           <AddStocks />
         </Route>
         <Route path="/login">
-          <Login />
+          
+          
         </Route>
         <Route path="/:id">
           <StockDetail />
         </Route>
       </Switch>
+
+      {user ? (
+        <Hero 
+          handleLogout={handleLogout}
+        />
+      ) : (
+        <Login 
+            email={email} 
+            setEmail={setEmail} 
+            password={password} 
+            setPassword={setPassword} 
+            handleLogin={handleLogin} 
+            handleSignup={handleSignup}
+            hasAccount={hasAccount}
+            setHasAccount={setHasAccount}
+            emailError={emailError}
+            passwordError={passwordError}
+          />
+      )}
     </div>
   );
 }
