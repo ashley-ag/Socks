@@ -1,4 +1,4 @@
-export const data = {
+export const personalData = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
     {

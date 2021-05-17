@@ -1,15 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 import { Doughnut } from "react-chartjs-2";
-import { data } from "../utils/ChartData";
+import { personalData } from "../utils/ChartData";
 
 const HomeChart = () => {
   return (
     <Chart>
       <Doughnut
-        data={data}
+        data={personalData}
         width={5}
-        height={3}
+        height={5}
         options={{ maintainAspectRatio: false }}
       />
     </Chart>

@@ -10,7 +10,7 @@ const PersonalStocks = () => {
 };
 
 const PStocks = styled.div`
-  min-height: 30vh;
+  min-height: 25vh;
 `;
 
 export default PersonalStocks;
