@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { Link } from 'react-router-dom';
 
 
 const LoginRequest = () => {
@@ -13,8 +13,9 @@ const LoginRequest = () => {
 
                 <Styledh3>To continue please login or signup!
 <br></br>
-                    <button id={"button1"}>Login</button>
-
+                    <Link to='/login'>
+                        <button id={"button1"} path='/'>Login</button>
+                    </Link>
                 </Styledh3>
             </div>
 
