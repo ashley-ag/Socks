@@ -10,6 +10,7 @@ import { Switch, Route } from "react-router-dom";
 import fire from "./firebase";
 import Login from "./components/Login";
 import Hero from "./components/Hero";
+import LoginRequest from "./components/LoginRequest";
 
 function App() {
   const [user, setUser] = useState("");
@@ -97,7 +98,7 @@ function App() {
           <Markets />
         </Route>
         <Route path="/addstocks">
-          <AddStocks />
+          <LoginRequest />
         </Route>
         <Route path="/login">
           {user ? (
@@ -120,6 +121,7 @@ function App() {
         <Route path="/:id">
           <StockDetail />
         </Route>
+
       </Switch>
     </div>
   );
