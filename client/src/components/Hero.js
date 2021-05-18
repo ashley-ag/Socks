@@ -1,28 +1,39 @@
 import React from "react";
 import styled from "styled-components";
+import Line from "./Line";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSocks } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animations";
 
 const Hero = ({ handleLogout }) => {
   return (
-    <StyledSec className="hero">
+    <StyledSec
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      className="hero"
+    >
       <nav>
         <h2>
           Socks <FontAwesomeIcon icon={faSocks} />
         </h2>
         <button onClick={handleLogout}>Logout</button>
       </nav>
+      <Line />
     </StyledSec>
   );
 };
 
-const StyledSec = styled.section`
-  min-height: 90vh;
+const StyledSec = styled(motion.section)`
+  min-height: 63vh;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   font-size: 2rem;
+  overflow: hidden;
   nav {
     display: flex;
     flex-direction: column;
