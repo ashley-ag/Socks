@@ -18,12 +18,6 @@ const LoginRequest = () => {
           Socks is a web-based application that allows a user to sign into their
           account, log their current stock units and cryptocurrency shares.
           Socks is a great choice for new and experienced investors alike.{" "}
-          <br /> <br />
-          With an auto-populating, personalized dashboard showing infographics
-          depicting the current value of your personalized market standings,
-          this app brings simple viewings to your ever-so complicated investment
-          portfolio. Join the millions of people using the socks.com app every
-          day to stay on top of global financial markets.
         </StyledP>
 
         <Styledh3>
@@ -208,6 +202,9 @@ const SvgDiv = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
+  svg {
+    height: 350px;
+  }
 `;
 
 const StyledDiv = styled.div`
@@ -225,9 +222,9 @@ const Styledh2 = styled.h2`
 `;
 const StyledP = styled.p`
   text-align: center;
-  color: white;
+  color: #ffffff;
   width: 40%;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 `;
 
 const Styledh3 = styled.h3`
