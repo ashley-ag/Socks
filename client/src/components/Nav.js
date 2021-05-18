@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChartLine,
@@ -9,8 +10,11 @@ import {
   faFolderPlus,
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { motion } from "framer-motion";
 
 const Nav = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
   return (
     <div>
       <StyledNav>
@@ -25,20 +29,40 @@ const Nav = () => {
               <Link to="/">
                 <FontAwesomeIcon icon={faHome} />
               </Link>
+              <Line
+                transition={{ duration: 0.75 }}
+                initial={{ width: "0%" }}
+                animate={{ width: pathname === "/" ? "50%" : "0%" }}
+              />
             </li>
             <li>
               <Link to="/markets">
                 <FontAwesomeIcon icon={faChartLine} />
+                <Line
+                  transition={{ duration: 0.75 }}
+                  initial={{ width: "0%" }}
+                  animate={{ width: pathname === "/markets" ? "50%" : "0%" }}
+                />
               </Link>
             </li>
             <li>
               <Link to="/addstocks">
                 <FontAwesomeIcon icon={faFolderPlus} />
+                <Line
+                  transition={{ duration: 0.75 }}
+                  initial={{ width: "0%" }}
+                  animate={{ width: pathname === "/addstocks" ? "50%" : "0%" }}
+                />
               </Link>
             </li>
             <li>
               <Link to="/login">
                 <FontAwesomeIcon icon={faUser} />
+                <Line
+                  transition={{ duration: 0.75 }}
+                  initial={{ width: "0%" }}
+                  animate={{ width: pathname === "/login" ? "50%" : "0%" }}
+                />
               </Link>
             </li>
           </ul>
@@ -55,6 +79,7 @@ const StyledNav = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   #logo {
     font-size: 2rem;
     margin-left: 2rem;
@@ -65,6 +90,7 @@ const StyledNav = styled.nav`
       color: #a300a3;
     }
   }
+
   ul {
     display: flex;
     justify-content: space-around;
@@ -72,10 +98,12 @@ const StyledNav = styled.nav`
     padding: 2rem 10rem;
   }
   li {
-    padding-left: 5rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
     color: white;
     cursor: pointer;
     font-size: 2rem;
+    position: relative;
   }
   @media (max-width: 1300px) {
     flex-direction: column;
@@ -85,11 +113,16 @@ const StyledNav = styled.nav`
     ul {
       padding: 2rem 1rem;
     }
-    li {
-      padding-left: 2rem;
-      padding-right: 2rem;
-    }
   }
+`;
+
+const Line = styled(motion.div)`
+  height: 0.3rem;
+  background: #a300a3;
+  width: 0;
+  position: absolute;
+  bottom: -10%;
+  left: 25%;
 `;
 
 export default Nav;

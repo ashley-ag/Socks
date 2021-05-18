@@ -97,6 +97,7 @@ const StyledDiv = styled.div`
     color: #a300a3;
     transition: all ease 0.5s;
     cursor: pointer;
+    margin: 2rem;
     &:hover {
       background: #a300a3;
       color: white;
