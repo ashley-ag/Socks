@@ -1,4 +1,6 @@
 import React from "react";
+import styled from "styled-components";
+import Line from "./Line";
 
 const Login = (props) => {
   const {
@@ -16,7 +18,7 @@ const Login = (props) => {
 
   return (
     <section className="login">
-      <div className="loginContainer">
+      <StyledDiv className="loginContainer">
         <label>Username</label>
         <input
           type="text"
@@ -40,7 +42,7 @@ const Login = (props) => {
               <button onClick={handleLogin}>Sign In</button>
               <p>
                 Don't have an account?
-                <span onClick={() => setHasAccount(!hasAccount)}>Sign Up</span>
+                <span onClick={() => setHasAccount(!hasAccount)}> Sign Up</span>
               </p>
             </>
           ) : (
@@ -48,14 +50,65 @@ const Login = (props) => {
               <button onClick={handleSignup}>Sign Up</button>
               <p>
                 Have an account?
-                <span onClick={() => setHasAccount(!hasAccount)}>Sign In</span>
+                <span onClick={() => setHasAccount(!hasAccount)}> Sign In</span>
               </p>
             </>
           )}
         </div>
-      </div>
+        <Line />
+      </StyledDiv>
     </section>
   );
 };
+
+const StyledDiv = styled.div`
+  min-height: 90vh;
+  max-height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  input {
+    padding: 1rem 2rem;
+    border-radius: 15px;
+    margin: 1rem;
+  }
+  label {
+    font-size: 2rem;
+  }
+  button {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    background: white;
+    border: none;
+    border-radius: 15px;
+    color: #a300a3;
+    transition: all ease 0.5s;
+    cursor: pointer;
+    &:hover {
+      background: #a300a3;
+      color: white;
+    }
+  }
+  .btnContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+      margin-top: 1rem;
+    }
+    span {
+      cursor: pointer;
+      color: #a300a3;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+`;
 
 export default Login;
