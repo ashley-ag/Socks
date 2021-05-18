@@ -204,7 +204,7 @@ const StyledLoginDiv = styled.div`
   margin-top: 25px;
   #button {
     margin-top: 20px;
-    color: purple;
+    color: #A300A3;
     background: white;
     transition: all ease 0.5s;
     padding: 1rem 2rem;
@@ -215,7 +215,7 @@ const StyledLoginDiv = styled.div`
     font-size: 1.2rem;
     &:hover {
       color: white;
-      background: purple;
+      background: #A300A3;
     }
   }
 `;
@@ -232,7 +232,7 @@ const StyledSignUpDiv = styled.div`
   margin-top: 90px;
   #button {
     margin-top: 25px;
-    color: purple;
+    color: #A300A3;
     background: white;
     transition: all ease 0.5s;
     padding: 1rem 2rem;
@@ -243,7 +243,7 @@ const StyledSignUpDiv = styled.div`
     font-size: 1.2rem;
     &:hover {
       color: white;
-      background: purple;
+      background: #A300A3;
     }
   }
 `;
