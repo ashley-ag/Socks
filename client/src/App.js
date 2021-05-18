@@ -2,15 +2,15 @@ import React, { useState, useEffect } from "react";
 import Home from "./pages/Home";
 import Markets from "./pages/Markets";
 import AddStocks from "./pages/AddStocks";
-// import Login from "./pages/Login";
 import StockDetail from "./pages/StockDetail";
 import Nav from "./components/Nav";
 import GlobalStyle from "./components/GlobalStyle";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import fire from "./firebase";
 import Login from "./components/Login";
 import Hero from "./components/Hero";
 import LoginRequest from "./components/LoginRequest";
+import { AnimatePresence } from "framer-motion";
 
 function App() {
   const [user, setUser] = useState("");
@@ -40,10 +40,10 @@ function App() {
           case "auth/invalid-email":
           case "auth/user-disabled":
           case "auth/user-not-found":
-            setEmailError(err.message);
+            setEmailError("Incorrect email or password");
             break;
           case "auth/wrong-password":
-            setPasswordError(err.message);
+            setPasswordError("Incorrect email or password");
             break;
         }
       });
@@ -86,43 +86,46 @@ function App() {
     authListener();
   }, []);
 
+  const location = useLocation();
+
   return (
     <div className="App">
       <GlobalStyle />
       <Nav />
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/markets" exact>
-          <Markets />
-        </Route>
-        <Route path="/addstocks">
-          <LoginRequest />
-        </Route>
-        <Route path="/login">
-          {user ? (
-            <Hero handleLogout={handleLogout} />
-          ) : (
-            <Login
-              email={email}
-              setEmail={setEmail}
-              password={password}
-              setPassword={setPassword}
-              handleLogin={handleLogin}
-              handleSignup={handleSignup}
-              hasAccount={hasAccount}
-              setHasAccount={setHasAccount}
-              emailError={emailError}
-              passwordError={passwordError}
-            />
-          )}
-        </Route>
-        <Route path="/:id">
-          <StockDetail />
-        </Route>
-
-      </Switch>
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.pathname}>
+          <Route path="/" exact>
+            {user ? <Home /> : <LoginRequest />}
+          </Route>
+          <Route path="/markets" exact>
+            {user ? <Markets /> : <LoginRequest />}
+          </Route>
+          <Route path="/addstocks">
+            {user ? <AddStocks /> : <LoginRequest />}
+          </Route>
+          <Route path="/login">
+            {user ? (
+              <Hero handleLogout={handleLogout} />
+            ) : (
+              <Login
+                email={email}
+                setEmail={setEmail}
+                password={password}
+                setPassword={setPassword}
+                handleLogin={handleLogin}
+                handleSignup={handleSignup}
+                hasAccount={hasAccount}
+                setHasAccount={setHasAccount}
+                emailError={emailError}
+                passwordError={passwordError}
+              />
+            )}
+          </Route>
+          <Route path="/:id">
+            <StockDetail />
+          </Route>
+        </Switch>
+      </AnimatePresence>
     </div>
   );
 }
