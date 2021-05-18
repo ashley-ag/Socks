@@ -14,10 +14,10 @@ const Home = () => {
 };
 
 const Line = styled.div`
-  width: 100%;
-  height: 3px;
+  width: 80%;
+  height: 2px;
   background: #a300a3;
-  margin: 1rem 0rem;
+  margin: 1rem auto;
 `;
 
 export default Home;
