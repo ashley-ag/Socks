@@ -1,17 +1,18 @@
-import React, { Component } from 'react';
+import React from "react";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animations";
 
-export default class AddStocks extends Component {
-  render() {
-    return(
-      <form className="stock-add-form">
-        <input className="input-add" type="text" placeholder="add stock"value={this.props.value} onChange={this.props.onChange}/>
-        <input className="btn-add" type="submit" value="save" onClick={this.props.onClick}/>
-      </form>
-    )
-  };
+const AddStocks = () => {
+  return (
+    <motion.div
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+    >
+      <h2>AddStocks</h2>
+    </motion.div>
+  );
 };
 
-
-
-
-
+export default AddStocks;

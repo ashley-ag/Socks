@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import Line from "./Line";
+import { motion } from "framer-motion";
+import { pageAnimation } from "../animations";
 
 const Login = (props) => {
   const {
@@ -17,13 +19,20 @@ const Login = (props) => {
   } = props;
 
   return (
-    <section className="login">
+    <motion.section
+      variants={pageAnimation}
+      initial="hidden"
+      animate="show"
+      exit="exit"
+      className="login"
+    >
       <StyledDiv className="loginContainer">
-        <label>Username</label>
+        <label>Email</label>
         <input
           type="text"
           autoFocus
           required
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
@@ -32,6 +41,7 @@ const Login = (props) => {
         <input
           type="password"
           required
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
@@ -57,13 +67,12 @@ const Login = (props) => {
         </div>
         <Line />
       </StyledDiv>
-    </section>
+    </motion.section>
   );
 };
 
 const StyledDiv = styled.div`
-  min-height: 90vh;
-  max-height: 90vh;
+  min-height: 63vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -88,6 +97,7 @@ const StyledDiv = styled.div`
     color: #a300a3;
     transition: all ease 0.5s;
     cursor: pointer;
+    margin: 2rem;
     &:hover {
       background: #a300a3;
       color: white;
