@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const StockApi = require('./../utils/stockApi');
+const StockApi = require('../utils/stockApi');
 const stockApi = new StockApi();
-const Stocks = require('./../models/stocks');
+const Stocks = require('../models/stocks');
 
-/* GET users listing. */
 router.get('/', (req, res, next) => {
   const stocksResponse = [];
 
