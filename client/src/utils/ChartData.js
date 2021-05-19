@@ -24,3 +24,29 @@ export const personalData = {
     },
   ],
 };
+
+export const marketData = {
+  labels: ["1", "2", "3", "4", "5", "6"],
+  datasets: [
+    {
+      label: "# of Votes",
+      data: [12, 19, 3, 13, 16, 10],
+      fill: false,
+      backgroundColor: "#a300a3",
+      borderColor: "#410941",
+    },
+  ],
+};
+
+export const marketOptions = {
+  maintainAspectRatio: false,
+  scales: {
+    yAxes: [
+      {
+        ticks: {
+          beginAtZero: true,
+        },
+      },
+    ],
+  },
+};
