@@ -16,7 +16,7 @@ const Chart = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 60%;
   margin: auto;
 `;
 

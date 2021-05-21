@@ -11,10 +11,8 @@ import Login from "./components/Login";
 import Hero from "./components/Hero";
 import LoginRequest from "./components/LoginRequest";
 import { AnimatePresence } from "framer-motion";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
-import StockList from './components/StockList.js';
-
+import StockList from "./components/StockList.js";
 
 function App() {
   const [user, setUser] = useState("");
@@ -131,13 +129,12 @@ function App() {
         </Switch>
       </AnimatePresence>
 
-      <div className='container'>
-        <div className='col-md-5 mt-5'>
-          <div className='card'>
-              <StockList />
+      <div className="container">
+        <div className="col-md-5 mt-5">
+          <div className="card">
+            <StockList />
           </div>
         </div>
-        
       </div>
     </div>
   );
