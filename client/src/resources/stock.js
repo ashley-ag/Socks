@@ -22,20 +22,19 @@ export const stock = {
     },
 
     getYesterdaysClose: (ticker, lastTradingDate, callback) => {
-        // stock.getLastTradingDate(date).then((data)=>{
-            if(lastTradingDate != '' && lastTradingDate != undefined) {
-                const url = stock.yesterdaysCloseURL(ticker, lastTradingDate)
+            if(lastTradingDate !== '' && lastTradingDate !== undefined) {
+
+                const url = stock.yesterdaysCloseURL(ticker, stock.formatDate(lastTradingDate))
                 fetch(url)
                 .then((res) => res.json())
                 .then((data) => callback(stock.formatPriceData(data)))
             }
             
-        // })
         
     },
 
-    getLastTradingDate: (date) => {
-        var today = stock.formatDate(date);
+    getLastTradingDate: () => {
+        const today = new Date().toISOString().split('T')[0].replace(/-/g, '');
         const url = `${iex.base_url}/ref-data/us/dates/trade/last/1/${today}?token=${iex.api_token}`
         return fetch(url).then((res)=> res.json());
     },
@@ -47,5 +46,5 @@ export const stock = {
 
     formatDate: (date) => {
         return new Date(date).toISOString().split('T')[0].replace(/-/g, '')
-    }
+    } 
 }
