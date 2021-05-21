@@ -12,7 +12,13 @@ class StockList extends Component {
         }
     }
 
-    
+    componentDidMount(){
+        stock.getLastTradingDate().then((data) => {
+            this.setState({
+                lastTradingDate: data[0].date
+            })
+        })
+    }
 
     render() {
         const lastTradingDate = this.state.lastTradingDate
