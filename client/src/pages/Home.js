@@ -7,7 +7,7 @@ import { pageAnimation } from "../animations";
 
 const Home = () => {
   return (
-    <motion.div
+    <HomePage
       variants={pageAnimation}
       initial="hidden"
       animate="show"
@@ -16,9 +16,25 @@ const Home = () => {
       <HomeChart />
       <Line id="line"></Line>
       <PersonalStocks />
-    </motion.div>
+    </HomePage>
   );
 };
+
+const HomePage = styled(motion.div)`
+  *::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+    border-radius: 20px;
+    border: transparent;
+  }
+`;
 
 const Line = styled.div`
   width: 80%;
