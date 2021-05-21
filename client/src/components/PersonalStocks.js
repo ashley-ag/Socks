@@ -6,18 +6,34 @@ const PersonalStocks = () => {
   return (
     <PStocks>
       <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
+      <StockCard />
     </PStocks>
   );
 };
 
 const PStocks = styled.div`
-  min-height: 25vh;
+  max-height: 25vh;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
   width: 80%;
   margin: auto;
+  overflow: scroll;
 `;
 
 export default PersonalStocks;

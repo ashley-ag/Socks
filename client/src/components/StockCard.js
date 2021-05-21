@@ -22,7 +22,7 @@ const StyleDiv = styled.div`
   width: 200px;
   height: 100px;
   border-radius: 15px;
-  margin: 0rem 2rem;
+  margin: 1rem 2rem;
   div {
     display: flex;
     justify-content: space-around;

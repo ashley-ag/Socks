@@ -19,6 +19,8 @@ a{
         color: #a300a3;
     }
 }
+
+
 `;
 
 export default GlobalStyle;
