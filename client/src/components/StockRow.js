@@ -46,13 +46,33 @@ class StockRow extends Component {
           dollar_change: `$${dollar_change}`,
           percent_change: ` (${percent_change}%)`,
         });
-<<<<<<< HEAD
       }
     );
   }
 
   componentDidMount() {
     stock.latestPrice(this.props.ticker, this.applyData.bind(this));
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.lastTradingDate == null) {
+      stock.getYesterdaysClose(
+        this.props.ticker,
+        this.props.lastTradingDate,
+        (yesterday) => {
+          const dollar_change = (this.state.price - yesterday.price).toFixed(2);
+          const percent_change = (
+            (100 * dollar_change) /
+            yesterday.price
+          ).toFixed(2);
+
+          this.setState({
+            dollar_change: `$${dollar_change}`,
+            percent_change: ` (${percent_change}%)`,
+          });
+        }
+      );
+    }
   }
 
   render() {
@@ -66,45 +86,6 @@ class StockRow extends Component {
       </li>
     );
   }
-=======
-        
-    }
-
-    componentDidMount(){
-        stock.latestPrice(this.props.ticker, this.applyData.bind(this))
-        
-    }
-
-    componentDidUpdate(prevProps) {
-        if (prevProps.lastTradingDate == null) {
-            stock.getYesterdaysClose(this.props.ticker, this.props.lastTradingDate, (yesterday)=>{
-
-                const dollar_change = (this.state.price - yesterday.price).toFixed(2);
-                const percent_change = (100 * dollar_change / yesterday.price).toFixed(2);
-    
-                this.setState({
-                    dollar_change: `$${dollar_change}`,
-                    percent_change: ` (${percent_change}%)`
-                })
-            })
-        }
-        
-    }
-
-    render() {
-        return (
-            <li className='list-group-item'>
-                <b>{this.props.ticker}</b> ${this.state.price}
-                <span className='change' style={this.changeStyle()}>
-
-                    {this.state.dollar_change}
-                    {this.state.percent_change}
-                </span>
-            </li>
-            
-        )
-    }
->>>>>>> main
 }
 
 export default StockRow;
