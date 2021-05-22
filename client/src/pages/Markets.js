@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animations";
 import MarketChart from "../components/MarketChart";
+import MarketStocks from "../components/MarketStocks";
 
 const Markets = () => {
   return (
@@ -14,6 +15,7 @@ const Markets = () => {
     >
       <MarketChart />
       <Line id="line"></Line>
+      <MarketStocks />
     </motion.div>
   );
 };
