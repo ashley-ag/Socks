@@ -20,7 +20,6 @@ const PersonalStocks = () => {
       <StockCard />
       <StockCard />
       <StockCard />
-      <StockCard />
     </PStocks>
   );
 };

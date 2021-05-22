@@ -12,14 +12,6 @@ import Hero from "./components/Hero";
 import LoginRequest from "./components/LoginRequest";
 import { AnimatePresence } from "framer-motion";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-
-import StockList from './components/StockList.js';
-// imported stockrow2 so i didnt mess anything up
-import StockRow2 from './components/StockRow2.js'
-
-
-
 function App() {
   const [user, setUser] = useState("");
   const [email, setEmail] = useState("");
@@ -134,25 +126,7 @@ function App() {
           </Route>
         </Switch>
       </AnimatePresence>
-
-
-      <div className='container'>
-        <div className='col-md-5 mt-5'>
-          <div className='card'>
-             {/* commented out stocklist2 until i can figure it out */}
-              {/* <StockList /> */}
-
-
-              <StockRow2 ticker='aapl' />
-              <StockRow2 ticker='goog' />
-              <StockRow2 ticker='tsla' />
-              <StockRow2 ticker='msft' />
-              
-
-          </div>
-        </div>
-      </div>
-   
+    </div>
   );
 }
 

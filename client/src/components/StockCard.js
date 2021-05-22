@@ -14,7 +14,7 @@ const StockCard = () => {
 };
 
 const StyleDiv = styled.div`
-  background: #b9b9b9;
+  background: white;
   display: flex;
   justify-content: center;
   align-items: center;
