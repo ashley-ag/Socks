@@ -27,7 +27,7 @@ const AddStocks = () => {
 };
 
 const AddStockStyle = styled(motion.div)`
-  min-height: 90vh;
+  min-height: 85vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
