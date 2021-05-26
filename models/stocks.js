@@ -1,29 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-class Stock {
-  constructor() {
-    this.model = mongoose.model('stock', new mongoose.Schema({
-      name: String
-    }));
-  }
+const Schema = mongoose.Schema;
 
-  findOrCreate(stockName) {
-    return this.model.findOne({ name: stockName })
-      .then((stock) => {
-        if (!stock) {
-          return this.create(stockName);
-        } 
-        return stock;
-      })
-  }
+const personalStockSchema = new Schema({
+  company: {
+    type: String,
+    trim: true,
+    required: "Enter a ticker",
+  },
+  units: {
+    type: Number,
+    required: "Enter unit amount",
+  },
+});
 
-  create(stockName) {
-    return this.model.create({ name: stockName })
-  }
+const Stock = mongoose.model("Stock", personalStockSchema);
 
-  delete(stockName) {
-    return this.model.findOneAndDelete({ name: stockName })
-  }
-}
-
-module.exports = new Stock();
+module.exports = Stock;
