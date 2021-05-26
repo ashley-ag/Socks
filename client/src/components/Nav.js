@@ -111,7 +111,10 @@ const StyledNav = styled.nav`
       padding-top: 1rem;
     }
     ul {
-      padding: 2rem 1rem;
+      padding: 1rem 2rem;
+    }
+    li {
+      padding: 0rem 1rem;
     }
   }
 `;
