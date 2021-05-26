@@ -16,7 +16,10 @@ const AddStocks = () => {
     >
       <h2 id="title">Add personal stocks by inputing them below.</h2>
       <div className="input">
-        <input type="text" required placeholder="Add Stock" />
+        <div className="edit">
+          <input type="text" required placeholder="Company Name" />
+          <input id="units" type="number" required placeholder="Units" />
+        </div>
         <button>
           <FontAwesomeIcon icon={faPlus} />
         </button>
@@ -41,11 +44,20 @@ const AddStockStyle = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
+    .edit {
+      width: 70%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
     input {
       padding: 1rem 2rem;
       border-radius: 15px;
       margin: 1rem;
       border: none;
+    }
+    #units {
+      width: 20%;
     }
     button {
       font-family: "Roboto", sans-serif;
@@ -76,6 +88,14 @@ const AddStockStyle = styled(motion.div)`
     background-color: rgba(155, 155, 155, 0.5);
     border-radius: 20px;
     border: transparent;
+  }
+  @media (max-width: 1300px) {
+    #title {
+      text-align: center;
+    }
+    .input {
+      flex-direction: column;
+    }
   }
 `;
 
