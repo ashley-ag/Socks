@@ -1,9 +1,11 @@
 const mongoose = require('mongoose');
+const db = require('../models');
 
 mongoose.connect(process.env.DB_STRING_CONNECTION, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
+
 
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
