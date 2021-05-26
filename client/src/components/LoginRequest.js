@@ -202,8 +202,14 @@ const SvgDiv = styled.div`
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: -1;
   svg {
     height: 350px;
+  }
+  @media (max-width: 375px) {
+    svg {
+      height: 250px;
+    }
   }
 `;
 
@@ -225,6 +231,18 @@ const StyledP = styled.p`
   color: #ffffff;
   width: 40%;
   font-size: 1.5rem;
+  @media (max-width: 1024px) {
+    width: 85%;
+  }
+  @media (max-width: 414px) {
+    padding: 2rem 0rem;
+    font-size: 1.2rem;
+  }
+  @media (max-width: 375px) {
+    width: 80%;
+    padding: 2rem 0rem;
+    font-size: 1.2rem;
+  }
 `;
 
 const Styledh3 = styled.h3`

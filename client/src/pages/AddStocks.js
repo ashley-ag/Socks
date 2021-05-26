@@ -97,6 +97,14 @@ const AddStockStyle = styled(motion.div)`
       flex-direction: column;
     }
   }
+  @media (max-width: 320px) {
+    input {
+      margin: 0.5rem;
+    }
+    .edit {
+      flex-direction: column;
+    }
+  }
 `;
 
 export default AddStocks;
