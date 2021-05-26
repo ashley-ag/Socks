@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import { Line } from "react-chartjs-2";
+import { Bar } from "react-chartjs-2";
 import { marketData, marketOptions } from "../utils/ChartData";
 
 const MarketChart = () => {
   return (
     <Chart>
-      <Line data={marketData} width={5} height={5} options={marketOptions} />
+      <Bar data={marketData} width={5} height={5} options={marketOptions} />
     </Chart>
   );
 };
