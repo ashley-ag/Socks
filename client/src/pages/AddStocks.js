@@ -17,7 +17,7 @@ const AddStocks = () => {
   //Load all stocks and store them with setStocks
   useEffect(() => {
     loadStocks();
-  }, [stocks]);
+  }, []);
 
   // load all stocks and set them to stocks
   function loadStocks() {

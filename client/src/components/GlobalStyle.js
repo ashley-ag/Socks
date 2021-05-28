@@ -13,7 +13,7 @@ body{
 }
 a{
     text-decoration: none;
-    color:white;
+    color:blue;
     transition: all ease 0.5s;
     &:hover{
         color: #a300a3;

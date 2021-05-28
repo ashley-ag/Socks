@@ -1,9 +1,12 @@
 const router = require("express").Router();
 const stockController = require("../../controllers/stockController");
 
-router.route("/")
-  .get(stockController.findAll)
-  .post(stockController.create);
+router.route("/").get(stockController.findAll).post(stockController.create);
+
+// router
+//   .route("/addstocks")
+//   .get(stockController.findAll)
+//   .post(stockController.create);
 
 router
   .route("/:id")
@@ -11,7 +14,6 @@ router
   .delete(stockController.remove);
 
 module.exports = router;
-
 
 // router.post("/api/stocks", ({ body }, res) => {
 //   Stock.create(body)
