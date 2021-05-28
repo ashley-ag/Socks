@@ -8,7 +8,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "axios": "^0.21.1",
-    "bootstrap": "^5.0.1",
     "chart.js": "^3.2.1",
     "firebase": "^8.6.1",
     "for-each": "^0.3.3",
