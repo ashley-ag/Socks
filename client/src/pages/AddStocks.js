@@ -1,12 +1,68 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import PeronalStocks from "../components/PersonalStocks";
+import API from "../utils/API";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animations";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const AddStocks = () => {
+  const [stocks, setStocks] = useState([]);
+  const [formObject, setFormObject] = useState({
+    name: "",
+    units: 0,
+  });
+
+  //Load all stocks and store them with setStocks
+  useEffect(() => {
+    loadStocks();
+  }, [stocks]);
+
+  // load all stocks and set them to stocks
+  function loadStocks() {
+    API.getStocks()
+      .then((res) => setStocks(res.data))
+      .catch((err) => console.log(err));
+  }
+
+  function deleteStock(id) {
+    API.deleteStock(id)
+      .then((res) => loadStocks())
+      .catch((err) => console.log(err));
+  }
+
+  //Updates component state when user types in the input.
+  function handleNameChange(e) {
+    const input = e.target.value;
+    setFormObject({ ...formObject, name: input });
+  }
+
+  function handleUnitsChange(e) {
+    const input = e.target.value;
+    setFormObject({ ...formObject, units: input });
+  }
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    if (formObject.name && formObject.units) {
+      API.saveStock({
+        name: formObject.name,
+        units: formObject.units,
+      })
+        .then(() =>
+          setFormObject({
+            name: "",
+            units: 0,
+          })
+        )
+        .then(() => loadStocks())
+        .catch((err) => console.log(err));
+    }
+  }
+
+  console.log(formObject);
+  console.log(stocks);
   return (
     <AddStockStyle
       variants={pageAnimation}
@@ -16,13 +72,26 @@ const AddStocks = () => {
     >
       <h2 id="title">Add personal stocks by inputing them below.</h2>
       <div className="input">
-        <div className="edit">
-          <input type="text" required placeholder="Company Name" />
-          <input id="units" type="number" required placeholder="Units" />
-        </div>
-        <button>
-          <FontAwesomeIcon icon={faPlus} />
-        </button>
+        <form>
+          <div className="edit">
+            <input
+              type="text"
+              required
+              placeholder="Company Name"
+              onChange={handleNameChange}
+            />
+            <input
+              id="units"
+              type="number"
+              required
+              placeholder="Units"
+              onChange={handleUnitsChange}
+            />
+          </div>
+          <button onClick={(e) => handleFormSubmit(e)}>
+            <FontAwesomeIcon icon={faPlus} />
+          </button>
+        </form>
       </div>
       <PeronalStocks />
     </AddStockStyle>
