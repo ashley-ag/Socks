@@ -14,10 +14,14 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function(req, res) {
+    console.log('req.body', req.body);
     db.Stock
       .create(req.body)
       .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .catch(err => {
+        console.log(err);
+        res.status(422).json(err)
+      });
   },
   remove: function(req, res) {
     db.Stock
