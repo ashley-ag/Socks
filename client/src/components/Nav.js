@@ -99,7 +99,7 @@ const StyledNav = styled.nav`
   li {
     padding-left: 2.5rem;
     padding-right: 2.5rem;
-    color: blue;
+    color: white;
     cursor: pointer;
     font-size: 2rem;
     position: relative;
