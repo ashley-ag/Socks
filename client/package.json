@@ -15,7 +15,6 @@
     "framer-motion": "^4.1.16",
     "highcharts": "^9.1.0",
     "react": "^16.6.3",
-    "react-bootstrap": "^4.0.0",
     "react-chartjs-2": "^3.0.3",
     "react-dom": "^16.6.3",
     "react-router-dom": "^5.2.0",
