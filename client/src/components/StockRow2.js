@@ -29,6 +29,7 @@ class StockRow2 extends Component {
   render() {
     return (
       <StyledDiv>
+        <button>X</button>
         <li className="list-group-item">
           <b>{this.props.ticker}</b> ${this.state.data.price}
           <span className="change" style={this.changeStyle()}>
@@ -51,6 +52,25 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 0.4rem;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    &:hover {
+      background: white;
+      color: red;
+      border: solid 1px red;
+    }
+  }
   li {
     list-style: none;
   }

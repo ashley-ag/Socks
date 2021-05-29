@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HomeChart from "../components/HomeChart";
 import PersonalStocks from "../components/PersonalStocks";
 import styled from "styled-components";
