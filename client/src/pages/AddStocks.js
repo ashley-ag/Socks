@@ -63,6 +63,7 @@ const AddStocks = () => {
 
   console.log(formObject);
   console.log(stocks);
+
   return (
     <AddStockStyle
       variants={pageAnimation}
