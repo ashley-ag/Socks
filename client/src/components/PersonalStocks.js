@@ -1,25 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import StockCard from "./StockCard";
+import StockRow2 from "./StockRow2";
+import API from "../utils/API";
 
 const PersonalStocks = () => {
+  const [homeStocks, setHomeStocks] = useState([]);
+  // load all stocks and set them to stocks
+  useEffect(() => {
+    loadStocks();
+  }, []);
+
+  function loadStocks() {
+    API.getStocks()
+      .then((res) => setHomeStocks(res.data))
+      .catch((err) => console.log(err));
+  }
+
   return (
     <PStocks>
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
-      <StockCard />
+      {homeStocks.map((stock) => (
+        <StockRow2 key={stock.id} ticker={stock.name} />
+      ))}
     </PStocks>
   );
 };

@@ -34,7 +34,7 @@ const AddStocks = () => {
 
   //Updates component state when user types in the input.
   function handleNameChange(e) {
-    const input = e.target.value;
+    const input = e.target.value.toUpperCase();
     setFormObject({ ...formObject, name: input });
   }
 
@@ -73,21 +73,20 @@ const AddStocks = () => {
       <h2 id="title">Add personal stocks by inputing them below.</h2>
       <div className="input">
         <form>
-          <div className="edit">
-            <input
-              type="text"
-              required
-              placeholder="Company Name"
-              onChange={handleNameChange}
-            />
-            <input
-              id="units"
-              type="number"
-              required
-              placeholder="Units"
-              onChange={handleUnitsChange}
-            />
-          </div>
+          <input
+            type="text"
+            required
+            placeholder="Company Name"
+            onChange={handleNameChange}
+          />
+          <input
+            id="units"
+            type="number"
+            required
+            placeholder="Units"
+            onChange={handleUnitsChange}
+          />
+
           <button onClick={(e) => handleFormSubmit(e)}>
             <FontAwesomeIcon icon={faPlus} />
           </button>
@@ -113,12 +112,13 @@ const AddStockStyle = styled(motion.div)`
     display: flex;
     justify-content: center;
     align-items: center;
-    .edit {
-      width: 70%;
+    form {
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-wrap: wrap;
     }
+
     input {
       padding: 1rem 2rem;
       border-radius: 15px;
@@ -126,7 +126,7 @@ const AddStockStyle = styled(motion.div)`
       border: none;
     }
     #units {
-      width: 20%;
+      width: 25%;
     }
     button {
       font-family: "Roboto", sans-serif;
@@ -169,9 +169,6 @@ const AddStockStyle = styled(motion.div)`
   @media (max-width: 320px) {
     input {
       margin: 0.5rem;
-    }
-    .edit {
-      flex-direction: column;
     }
   }
 `;
