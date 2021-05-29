@@ -29,7 +29,6 @@ class StockRow2 extends Component {
   render() {
     return (
       <StyledDiv>
-        <button>X</button>
         <li className="list-group-item">
           <b>{this.props.ticker}</b> ${this.state.data.price}
           <span className="change" style={this.changeStyle()}>

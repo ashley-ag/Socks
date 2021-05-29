@@ -9,7 +9,7 @@ import { Switch, Route, useLocation } from "react-router-dom";
 import fire from "./firebase";
 import Login from "./components/Login";
 import Hero from "./components/Hero";
-import API from "./utils/API";
+import StockList from "./components/StockList";
 import LoginRequest from "./components/LoginRequest";
 import { AnimatePresence } from "framer-motion";
 
