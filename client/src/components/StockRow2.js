@@ -6,13 +6,20 @@ class StockRow2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {},
+      data: {
+        price: null,
+        date: null,
+        time: null,
+        data: null,
+        dollar_change: null,
+        percent_change: null,
+      },
     };
   }
 
   changeStyle() {
     return {
-      color: this.state.dollar_change > 0 ? "green" : "red",
+      color: this.state.data.dollar_change > 0 ? "green" : "red",
     };
   }
 
@@ -32,8 +39,8 @@ class StockRow2 extends Component {
         <li className="list-group-item">
           <b>{this.props.ticker}</b> ${this.state.data.price}
           <span className="change" style={this.changeStyle()}>
-            {this.state.dollar_change}
-            {this.state.percent_change}
+            {this.state.data.dollar_change}
+            {this.state.data.percent_change}
           </span>
         </li>
       </StyledDiv>
