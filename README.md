@@ -49,7 +49,7 @@ DONT FORGET TO POPULATE!!!
 ## Links
 
 https://github.com/ashley-ag/Socks<br>
-https://socks-stock.herokuapp.com/
+https://socks-stocks.herokuapp.com/
 
 
 ## Contributors
