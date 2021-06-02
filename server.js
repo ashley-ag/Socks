@@ -24,7 +24,13 @@ app.get("*", function(req, res) {
 });
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/stockSocks"
+  process.env.MONGODB_URI || 'mongodb://localhost/stockSocks',
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false
+  }
 );
 
 app.listen(PORT, function() {
