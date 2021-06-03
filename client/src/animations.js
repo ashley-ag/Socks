@@ -23,3 +23,13 @@ export const pageAnimation = {
     },
   },
 };
+
+export const slide = {
+  hidden: {
+    scale: 0,
+  },
+  show: {
+    scale: 1,
+    transition: { duration: 1 },
+  },
+};

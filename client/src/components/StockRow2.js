@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { stock } from "../resources/stock2.js";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import API from "../utils/API";
 
 class StockRow2 extends Component {
@@ -67,7 +69,7 @@ class StockRow2 extends Component {
   }
 }
 
-const StyledDiv = styled.div`
+const StyledDiv = styled(motion.div)`
   background: white;
   border-radius: 15px;
   width: 200px;

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import StockRow2 from "./StockRow2";
 import API from "../utils/API";
+import { slide } from "../animations";
+import { motion } from "framer-motion";
 
 const PersonalStocks = () => {
   const [homeStocks, setHomeStocks] = useState([]);
@@ -26,10 +28,12 @@ const PersonalStocks = () => {
   return (
     <PStocks>
       {homeStocks.map((stock) => (
-        <div>
-          <StockRow2 key={stock._id} ticker={stock.name} />
-          <button onClick={() => deleteStock(stock._id)}>X</button>
-        </div>
+        <Hide>
+          <motion.div variants={slide}>
+            <StockRow2 key={stock._id} ticker={stock.name} />
+            <button onClick={() => deleteStock(stock._id)}>X</button>
+          </motion.div>
+        </Hide>
       ))}
     </PStocks>
   );
@@ -49,7 +53,7 @@ const PStocks = styled.div`
   }
   button {
     position: absolute;
-    top: 16px;
+    top: 0px;
     right: 16px;
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
@@ -65,6 +69,10 @@ const PStocks = styled.div`
       color: red;
     }
   }
+`;
+
+const Hide = styled.div`
+  overflow: hidden;
 `;
 
 export default PersonalStocks;

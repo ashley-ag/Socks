@@ -70,12 +70,13 @@ const AddStocks = () => {
           <input
             type="text"
             required
-            placeholder="Company Name"
+            placeholder="Company Ticker"
             onChange={handleNameChange}
           />
           <input
             id="units"
             type="number"
+            min="0"
             required
             placeholder="Units"
             onChange={handleUnitsChange}
