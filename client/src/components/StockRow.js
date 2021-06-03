@@ -6,12 +6,14 @@ class StockRow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      price: null,
-      date: null,
-      time: null,
-      data: null,
-      dollar_change: null,
-      percent_change: null,
+      data: {
+        price: null,
+        date: null,
+        time: null,
+        data: null,
+        dollar_change: null,
+        percent_change: null,
+      },
     };
   }
 

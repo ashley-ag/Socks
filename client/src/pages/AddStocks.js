@@ -26,12 +26,6 @@ const AddStocks = () => {
       .catch((err) => console.log(err));
   }
 
-  function deleteStock(id) {
-    API.deleteStock(id)
-      .then((res) => loadStocks())
-      .catch((err) => console.log(err));
-  }
-
   //Updates component state when user types in the input.
   function handleNameChange(e) {
     const input = e.target.value.toUpperCase();
@@ -44,7 +38,6 @@ const AddStocks = () => {
   }
 
   function handleFormSubmit(e) {
-    e.preventDefault();
     if (formObject.name && formObject.units) {
       API.saveStock({
         name: formObject.name,

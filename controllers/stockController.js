@@ -12,7 +12,6 @@ module.exports = {
       .catch((err) => console.log(err));
   },
   create: function (req, res) {
-    console.log("req.body", req.body);
     db.Stock.create(req.body)
       .then((dbModel) => res.json(dbModel))
       .catch((err) => console.log(err));
