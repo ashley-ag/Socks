@@ -16,14 +16,20 @@ const PersonalStocks = () => {
       .then((res) => setHomeStocks(res.data))
       .catch((err) => console.log(err));
   }
-  useEffect(() => {
-    homeStocks.map((stock) => console.log(stock));
-  });
+
+  function deleteStock(id) {
+    API.deleteStock(id)
+      .then((res) => loadStocks())
+      .catch((err) => console.log(err));
+  }
 
   return (
     <PStocks>
       {homeStocks.map((stock) => (
-        <StockRow2 key={stock._id} ticker={stock.name} />
+        <div>
+          <StockRow2 key={stock._id} ticker={stock.name} />
+          <button onClick={() => deleteStock(stock._id)}>X</button>
+        </div>
       ))}
     </PStocks>
   );
@@ -38,6 +44,27 @@ const PStocks = styled.div`
   width: 80%;
   margin: auto;
   overflow: scroll;
+  div {
+    position: relative;
+  }
+  button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    border-top-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 0.4rem;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    transition: all ease 0.5s;
+    border: solid 1px red;
+    &:hover {
+      background: white;
+      color: red;
+    }
+  }
 `;
 
 export default PersonalStocks;
