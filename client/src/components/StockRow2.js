@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { stock } from "../resources/stock2.js";
 import styled from "styled-components";
+import API from "../utils/API";
 
 class StockRow2 extends Component {
   constructor(props) {
@@ -14,6 +15,7 @@ class StockRow2 extends Component {
         dollar_change: null,
         percent_change: null,
       },
+      stocks: [],
     };
   }
 
@@ -33,9 +35,25 @@ class StockRow2 extends Component {
     stock.latestPrice(this.props.ticker, this.applyData.bind(this));
   }
 
+  loadStocks() {
+    API.getStocks().then((res) =>
+      res
+        .json()
+        .then((data) => this.setState({ stocks: data }))
+        .catch((err) => console.log(err))
+    );
+  }
+
+  deleteStock(id) {
+    API.deleteStock(id)
+      .then((res) => this.loadStocks())
+      .catch((err) => console.log(err));
+  }
+
   render() {
     return (
       <StyledDiv>
+        <button onClick={() => this.deleteStock(this.props.key)}>X</button>
         <li className="list-group-item">
           <b>{this.props.ticker}</b> ${this.state.data.price}
           <span className="change" style={this.changeStyle()}>
