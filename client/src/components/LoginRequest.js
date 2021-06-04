@@ -203,6 +203,7 @@ const SvgDiv = styled.div`
   bottom: 0;
   right: 0;
   z-index: -1;
+
   svg {
     height: 350px;
   }
@@ -237,11 +238,9 @@ const StyledP = styled.p`
   @media (max-width: 414px) {
     padding: 2rem 0rem;
     font-size: 1.2rem;
+    display: none;
   }
   @media (max-width: 375px) {
-    width: 80%;
-    padding: 2rem 0rem;
-    font-size: 1.2rem;
   }
 `;
 

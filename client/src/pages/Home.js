@@ -4,8 +4,24 @@ import PersonalStocks from "../components/PersonalStocks";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { pageAnimation } from "../animations";
+import API from "../utils/API";
+import NoStocks from "../components/NoStocks";
 
 const Home = () => {
+  const [stocks, setStocks] = useState([]);
+
+  //Load all stocks and store them with setStocks
+  useEffect(() => {
+    loadStocks();
+  }, []);
+
+  // load all stocks and set them to stocks
+  function loadStocks() {
+    API.getStocks()
+      .then((res) => setStocks(res.data))
+      .catch((err) => console.log(err));
+  }
+  console.log(stocks);
   return (
     <HomePage
       variants={pageAnimation}
@@ -13,7 +29,7 @@ const Home = () => {
       animate="show"
       exit="exit"
     >
-      <HomeChart />
+      {stocks.length === 0 ? <NoStocks /> : <HomeChart />}
       <Line id="line"></Line>
       <PersonalStocks />
     </HomePage>
