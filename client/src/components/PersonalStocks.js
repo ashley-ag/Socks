@@ -56,17 +56,17 @@ const PStocks = styled.div`
     top: 0px;
     right: 16px;
     border-top-right-radius: 15px;
-    border-bottom-left-radius: 15px;
     padding: 0.4rem;
     border: none;
     background: red;
     color: white;
     cursor: pointer;
     transition: all ease 0.5s;
-    border: solid 1px red;
+    border: solid 2px red;
     &:hover {
       background: white;
       color: red;
+      border-bottom-left-radius: 15px;
     }
   }
 `;
