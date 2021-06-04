@@ -46,14 +46,6 @@ class StockRow2 extends Component {
     );
   }
 
-  //Commenting out deletestock for now trying to use it on personalstocks.js instead
-
-  // deleteStock(id) {
-  //   API.deleteStock(id)
-  //     .then((res) => this.loadStocks())
-  //     .catch((err) => console.log(err));
-  // }
-
   render() {
     return (
       <StyledDiv>

@@ -87,6 +87,8 @@ const AddStocks = () => {
           </button>
         </form>
       </div>
+      <h1 id="text">Personal Stocks:</h1>
+      <Line></Line>
       <PeronalStocks />
     </AddStockStyle>
   );
@@ -140,6 +142,9 @@ const AddStockStyle = styled(motion.div)`
       }
     }
   }
+  #text {
+    color: white;
+  }
   *::-webkit-scrollbar {
     width: 5px;
   }
@@ -166,6 +171,13 @@ const AddStockStyle = styled(motion.div)`
       margin: 0.5rem;
     }
   }
+`;
+
+const Line = styled.div`
+  width: 80%;
+  height: 2px;
+  background: #a300a3;
+  margin: 1rem auto;
 `;
 
 export default AddStocks;

@@ -2,7 +2,7 @@ export const personalData = {
   labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
   datasets: [
     {
-      label: "# of Votes",
+      label: "# of Units",
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
@@ -29,7 +29,7 @@ export const marketData = {
   labels: ["aapl", "goog", "tsla", "msft"],
   datasets: [
     {
-      label: "# of Votes",
+      label: "Current Price",
       data: [125.37, 2343.64, 580.89, 245.1],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
