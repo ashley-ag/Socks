@@ -9,7 +9,6 @@ import { Switch, Route, useLocation } from "react-router-dom";
 import fire from "./firebase";
 import Login from "./components/Login";
 import Hero from "./components/Hero";
-import StockList from "./components/StockList";
 import LoginRequest from "./components/LoginRequest";
 import { AnimatePresence } from "framer-motion";
 
@@ -97,48 +96,6 @@ function App() {
     name: "",
     units: 0,
   });
-
-  // //Load all stocks and store them with setStocks
-  // useEffect(() => {
-  //   loadStocks();
-  // }, []);
-
-  // // load all stocks and set them to stocks
-  // function loadStocks() {
-  //   API.getStocks()
-  //     .then((res) => setStocks(res.data))
-  //     .catch((err) => console.log(err));
-  // }
-
-  // function deleteStock(id) {
-  //   API.deleteStock(id)
-  //     .then((res) => loadStocks())
-  //     .catch((err) => console.log(err));
-  // }
-
-  // //Updates component state when user types in the input.
-  // function handleInputChange(e) {
-  //   const { name, value } = e.target;
-  //   setFormObject({ ...formObject, [name]: value });
-  // }
-
-  // function handleFormSubmit(e) {
-  //   e.preventDefault();
-  //   if (formObject.name && formObject.units) {
-  //     API.saveStock({
-  //       name: formObject.name,
-  //       units: formObject.units,
-  //     })
-  //       .then(() =>
-  //         setFormObject({
-  //           name: "",
-  //           units: 0,
-  //         })
-  //       )
-  //       .then(() => loadStocks())
-  //       .catch((err) => console.log(err));
-  //   }
-  // }
 
   return (
     <div className="App">

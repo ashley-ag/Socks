@@ -5,6 +5,7 @@ import API from "../utils/API";
 
 const HomeChart = () => {
   const [chartData, setChartData] = useState([]);
+
   // load all stocks and set them to stocks
   useEffect(() => {
     loadStocks();
@@ -15,11 +16,12 @@ const HomeChart = () => {
       .then((res) => setChartData(res.data))
       .catch((err) => console.log(err));
   }
+
+  const stockNames = chartData.map((stock) => stock.name);
   const unitNum = chartData.map((stock) => stock.units);
-  const stockName = chartData.map((stock) => stock.name);
 
   const personalData = {
-    labels: stockName,
+    labels: stockNames,
     datasets: [
       {
         label: "# of Units",

@@ -21,7 +21,7 @@ const Home = () => {
       .then((res) => setStocks(res.data))
       .catch((err) => console.log(err));
   }
-  console.log(stocks);
+
   return (
     <HomePage
       variants={pageAnimation}
