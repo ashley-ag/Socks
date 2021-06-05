@@ -40,11 +40,13 @@ Socks is a web-based application that allows a user to sign into their account, 
 
 ## Screenshots
 
+![image](https://user-images.githubusercontent.com/38632935/120902136-8e4bf700-c5f3-11eb-9600-098766b2f9bb.png)
 
+![image](https://user-images.githubusercontent.com/38632935/120902154-aae82f00-c5f3-11eb-8d71-5234a857deb7.png)
 
-DONT FORGET TO POPULATE!!!
+![image](https://user-images.githubusercontent.com/38632935/120902195-bd626880-c5f3-11eb-887e-d556c08e3066.png)
 
-
+![image](https://user-images.githubusercontent.com/38632935/120902203-ca7f5780-c5f3-11eb-85e7-8a94252204b2.png)
 
 ## Links
 
