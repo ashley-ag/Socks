@@ -7,16 +7,17 @@ import MarketStocks from "../components/MarketStocks";
 
 const Markets = () => {
   return (
-    <motion.div
+    <StyledTitle
       variants={pageAnimation}
       initial="hidden"
       animate="show"
       exit="exit"
     >
+      <h2>Popular Market Stocks</h2>
       <MarketChart />
       <Line id="line"></Line>
       <MarketStocks />
-    </motion.div>
+    </StyledTitle>
   );
 };
 
@@ -25,6 +26,16 @@ const Line = styled.div`
   height: 2px;
   background: #a300a3;
   margin: 1rem auto;
+`;
+
+const StyledTitle = styled(motion.div)`
+  h2 {
+    color: white;
+    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export default Markets;
