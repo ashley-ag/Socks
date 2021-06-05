@@ -7,7 +7,7 @@ const MarketStocks = () => {
     <MStocks>
       <StockRow2 ticker="aapl" />
       <StockRow2 ticker="goog" />
-      <StockRow2 ticker="tsla" />
+      <StockRow2 ticker="amzn" />
       <StockRow2 ticker="msft" />
     </MStocks>
   );

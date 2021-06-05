@@ -1,9 +1,9 @@
 export const marketData = {
-  labels: ["aapl", "goog", "tsla", "msft"],
+  labels: ["aapl", "goog", "amzn", "msft"],
   datasets: [
     {
       label: "Current Price",
-      data: [125.37, 2400.64, 580.89, 245.1],
+      data: [125.37, 2400.64, 3206.55, 245.1],
       backgroundColor: [
         "rgba(255, 99, 132, 0.2)",
         "rgba(54, 162, 235, 0.2)",
