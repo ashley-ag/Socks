@@ -29,6 +29,7 @@ const Home = () => {
       animate="show"
       exit="exit"
     >
+      <h2>Personal Stocks</h2>
       {stocks.length === 0 ? <NoStocks /> : <HomeChart />}
       <Line id="line"></Line>
       <PersonalStocks />
@@ -37,6 +38,13 @@ const Home = () => {
 };
 
 const HomePage = styled(motion.div)`
+  h2 {
+    color: white;
+    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   *::-webkit-scrollbar {
     width: 5px;
   }
